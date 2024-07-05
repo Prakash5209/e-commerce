@@ -1,0 +1,62 @@
+form[data-form-type="login"] input[id="id_login"]{
+	width:100%;
+	padding:7px;
+	border-radius:5px;
+}
+
+form[data-form-type="login"] input[id="id_password"]{
+	width:100%;
+	padding:7px;
+	border-radius:5px;
+}
+
+
+
+
+form[data-form-type="login"] label[for="id_remember"]{
+	display: inline-block;
+	margin-right: 5px; /* Adjust margin for spacing */
+}
+form[data-form-type="login"] input[type="checkbox"]{
+	vertical-align: middle; 
+}
+form[data-form-type="login"] button[type="submit"]{
+	background-color:white; /* Primary color */
+	color: #2185d0; /* Text color */
+	transition: background-color 0.3s ease; /* Transition definition */
+	padding:0.5rem;
+	border-radius: 0.28em; /* Rounded corners */
+	font-weight: bold; /* Bold text */
+	cursor: pointer; /* Pointer cursor on hover */
+	border:#2185d0 1px solid;
+}
+form[data-form-type="login"] button[type="submit"]:hover{
+	background-color:#2185d0;
+	color:white;
+	border:#2185d0 1px solid;
+}
+
+form button[type="submit"]{
+	background-color:white; /* Primary color */
+	color: #2185d0; /* Text color */
+	border: none;
+	padding:0.5rem;
+	border-radius: 0.28em; /* Rounded corners */
+	font-weight: bold; /* Bold text */
+	cursor: pointer; /* Pointer cursor on hover */
+	border:#2185d0 1px solid;
+	transition: background-color 0.3s ease; /* Transition definition */
+}
+form button[type="submit"]:hover{
+	background-color:#2185d0;
+	color:white;
+	border:#2185d0 1px solid;
+}
+
+ul{
+  padding:0;
+  maring:0;
+}
+ul li{
+  list-style:none;
+}
