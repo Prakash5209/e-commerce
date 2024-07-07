@@ -18,7 +18,13 @@
 
   </head>
   <body>
+    <div class="ui grid">
+      <div class="three wide column"></div>
+      <div class="six wide column">
 	{% block content %}
 	{% endblock %}
+      </div>
+      <div class="three wide column"></div>
+    </div>
   </body>
 </html>
