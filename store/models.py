@@ -40,15 +40,24 @@ class Category(models.Model):
             self.slug = slugify(name)
         super().save(*args,**kwargs)
 
+class Tags(models.Model):
+    tag = models.CharField(max_length=255,blank=True)
+
+    class Meta:
+        verbose_name = 'tag'
+
+    def __str__(self):
+        return self.tag
 
 class Product(TimeStampModel):
     user = models.ForeignKey(User,on_delete=models.CASCADE,related_name="user_item")
-    category = models.ForeignKey(Category,on_delete=models.CASCADE,related_name = 'products')
-    name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255,unique=True)
+    name = models.CharField(max_length=255)
     description = models.TextField()
     price = models.DecimalField(max_digits=10,decimal_places=2)
     stock_count = models.PositiveIntegerField(default=0)
+    category = models.ForeignKey(Category,on_delete=models.CASCADE,related_name = 'products')
+    tags = models.ForeignKey(Tags,on_delete=models.CASCADE,related_name="product_tags")
 
     def __str__(self):
         return self.name
