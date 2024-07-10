@@ -20,7 +20,7 @@ form[data-form-type="login"] label[for="id_remember"]{
 form[data-form-type="login"] input[type="checkbox"]{
 	vertical-align: middle; 
 }
-form[data-form-type="login"] button[type="submit"]{
+form[action="/accounts/login/"] button[type="submit"]{
 	background-color:white; /* Primary color */
 	color: #2185d0; /* Text color */
 	transition: background-color 0.3s ease; /* Transition definition */
@@ -30,7 +30,7 @@ form[data-form-type="login"] button[type="submit"]{
 	cursor: pointer; /* Pointer cursor on hover */
 	border:#2185d0 1px solid;
 }
-form[data-form-type="login"] button[type="submit"]:hover{
+form[action="/accounts/login/"] button[type="submit"]:hover{
 	background-color:#2185d0;
 	color:white;
 	border:#2185d0 1px solid;

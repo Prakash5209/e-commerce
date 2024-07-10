@@ -4,6 +4,14 @@ from django.utils.text import slugify
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
+
+class TimeStampModel(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    class Meta:
+        abstract = True
+        ordering = ['-updated_at','-created_at']
+
 rating_choice = (
     (1,'1 star'),
     (1.5,'1.5 star'),
@@ -15,13 +23,14 @@ rating_choice = (
     (4.5,'4.5 star'),
     (5,'5 star'),
 )
-class TimeStampModel(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-    
-    class Meta:
-        abstract = True
-        ordering = ['-updated_at','-created_at']
+
+class CarouselImage(models.Model):
+    image = models.ImageField(upload_to = "carouselImage")
+    title = models.CharField(max_length=255)
+    link = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.title
 
 class Category(models.Model):
     name = models.CharField(max_length=255),

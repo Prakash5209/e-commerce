@@ -1,14 +1,31 @@
-form button[type="submit"]{
-	background-color:white; /* Primary color */
-	color: #dc3545; /* Text color */
+/*form button[type="submit"]{
+	background-color:white;
+	color: #dc3545;
 	padding:0.5rem;
-	border-radius: 0.28em; /* Rounded corners */
-	font-weight: bold; /* Bold text */
-	cursor: pointer; /* Pointer cursor on hover */
+	border-radius: 0.28em; 
+	font-weight: bold;
+	cursor: pointer;
 	border:#dc3545 1px solid;
-	transition: background-color 0.3s ease; /* Transition definition */
+	transition: background-color 0.3s ease;
 }
 form button[type="submit"]:hover{
+	background-color:#dc3545;
+	color:white;
+	border:#dc3545 1px solid;
+}*/
+
+form[action="/accounts/logout/"] button[type="submit"]{
+	background-color:white;
+	color: #dc3545;
+	padding:0.5rem;
+	border-radius: 0.28em; 
+	font-weight: bold;
+	cursor: pointer;
+	border:#dc3545 1px solid;
+	transition: background-color 0.3s ease;
+}
+
+form[action="/accounts/logout/"] button[type="submit"]:hover{
 	background-color:#dc3545;
 	color:white;
 	border:#dc3545 1px solid;

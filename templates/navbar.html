@@ -1,0 +1,35 @@
+{% load static %}
+{% block stylesheet %}
+{% endblock %}
+
+
+<div class="row p-0 m-0 bg-body-tertiary">
+  <div class="col-2 p-0 m-0"></div>
+  <div class="col-8 p-0 m-0">
+    <nav class="navbar sticky-top bg-body-tertiary">
+      <a class="navbar-brand" href="{% url 'store:store' %}">Navbar</a>
+      <form class="d-flex mx-auto" role="search" style="width: 50%;">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      <div class="d-flex">
+        {% if not request.user.is_authenticated %}
+          <a href="{% url 'account_login' %}" class="btn btn-primary me-2">Login</a>
+          <a href="{% url 'account_signup' %}" class="btn btn-secondary me-2">Sign Up</a>
+        {% else %}
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              {{ request.user }}
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="userDropdown">
+              <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
+            </ul>
+          </div>
+        {% endif %}
+        <a href="#" class="btn btn-info ms-2"><i class="fa-solid fa-cart-shopping"></i>&nbsp;Cart</a>
+      </div>
+    </nav>
+  </div>
+  <div class="col-2 p-0 m-0"></div>
+</div>
+

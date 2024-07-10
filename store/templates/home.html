@@ -2,4 +2,37 @@
 {% block content %}
 <p>store</p>
 {{request.user}}
+
+<div class="container">
+  <h2>Carousel Example</h2>
+  <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      {% for i in CarouselImage %}
+      <li data-bs-target="#carouselExampleInterval" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}"></li>
+      {% endfor %}
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      {% if CarouselImage %}
+      {% for i in CarouselImage %}
+      <div class="carousel-item {% if forloop.first %}active{% endif %}" data-bs-interval="3500">
+        <a href="{{i.link}}"><img src="{{ i.image.url }}" class="d-block w-100 img-fluid" style="height: 500px; object-fit: cover;" alt="{{ i.title }}"></a>
+      </div>
+      {% endfor %}
+      {% endif %}
+    </div> 
+
+    <!-- Left and right controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
 {% endblock %}

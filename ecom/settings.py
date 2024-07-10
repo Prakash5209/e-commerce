@@ -171,10 +171,10 @@ MEDIA_ROOT = BASE_DIR / 'mediafiles'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#ACCOUNT_FORMS = {
-#    'login': 'userAccount.forms.CustomLoginForm',
-#    'signup': 'userAccount.forms.CustomSignupForm',
-#}
+ACCOUNT_FORMS = {
+    #'login': 'userAccount.forms.CustomLoginForm',
+    'signup': 'userAccount.forms.SignupForm',
+}
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
